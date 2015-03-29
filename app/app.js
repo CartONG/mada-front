@@ -74,4 +74,27 @@
 		$('.js-filters').removeClass('opened');
 	});
 
+	$('.js-filterFieldList input').on('change', function (e) {
+		updateFilters();
+	});
+
+	function updateFilters() {
+		updateCheckboxList('actionType');
+		updateCheckboxList('population');
+
+		function updateCheckboxList(name) {
+			var values = _.map( $('#'+name +' input'), function(el) {return el.checked;});
+			$('[data-countof='+name+']').text( _.contains(values, false) ? _.compact(values).length + '/' + values.length : 'toutes' );
+	
+		}
+	};
+
+	updateFilters();
+
+
+	//move that to a sass loop later :)
+	_.each($('#actionType .checkboxList input'), function(el, index) {
+		$('<span class="icon"></span>').insertAfter(el).css('background-position', '-' + index * 30 + 'px' + ' 0');
+	});
+
 })()

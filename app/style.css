@@ -17,10 +17,10 @@ body
 
 #filters {
 	z-index: 99;
-	right: 30px;
-	top: 80px;
-	width: 350px;
-	height: calc(100% - 120px);
+	right: 20px;
+	top: 70px;
+	width: 300px;
+	height: calc(100% - 100px);
 }
 
 .filters-inner {
@@ -155,7 +155,7 @@ body
 	display: none;
 }
 
-.panelStatus {
+.panelCollapsedStatus {
 	position: absolute;
  	right: 10px;
 	top: 35%;
@@ -163,8 +163,27 @@ body
 }
 .checkboxList label {
 	display: block;
+	line-height: 1.8rem;
 }
+
+.checkboxList .icon {
+	display: inline-block;
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 30px;
+}
+
+#actionType .checkboxList .icon {
+	background-image: url('./images/actionType-sprites.png');
+}
+
 
 .checkboxList-sectionTitle {
 	font-variant:small-caps;
+}
+
+
+.panelFilterStatus {
+	color: #999;
+	font-style: italic; 
 }

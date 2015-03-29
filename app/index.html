@@ -29,7 +29,7 @@
 	          </button>
 	          <a class="navbar-brand" href="#">ONUSIDA | Atlas solidarité Madagascar</a>
 	        </div>
-	        <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+	        <div id="navbar" class="navbar-collapse collapse navbar-right" aria-expanded="false" style="height: 1px;">
 	          <ul class="nav navbar-nav">
 	            <li class="active"><a href="#">Carte</a></li>
 	            <li><a href="#">À propos</a></li>
@@ -66,8 +66,10 @@
 				    <div class="panel-heading" role="tab" id="actionTypeHeading">
 				      <h4 class="panel-title">
 				        <a data-toggle="collapse" href="#actionType" aria-expanded="true" aria-controls="actionType"  class="panel-title-inner">
-				          Actions de lutte contre le SIDA à Madagascar :
-				          <span class="panelStatus">
+				          Actions de lutte contre le SIDA à Madagascar
+				          <span class="panelFilterStatus" data-countof="actionType"></span> 
+
+				          <span class="panelCollapsedStatus">
 				          	<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
 				          	<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
 				          </span>
@@ -76,35 +78,45 @@
 				      </h4>
 				    </div>
 				    <div id="actionType" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="actionTypeHeading">
-				      <div class="panel-body checkboxList">
-						<label><input type="checkbox" checked>
+				      <div class="panel-body checkboxList js-filterFieldList">
+						<label>
+							<input type="checkbox" checked>
 							<abbr title="action visant à changer les comportements et à influencer les politiques. Ce genre d'interventions consiste en des actions d'informations, de sensibilisation, renforcement des capacités, d'établissement de réseaux/partenariats et aussi de lobbying.">Plaidoyer</abbr>
 						</label>
-						<label><input type="checkbox" checked>
+						<label>
+							<input type="checkbox" checked>
 							<abbr title="communication pour le changement de comportement ou communication de proximité">CCC</abbr>
 						</label>
-						<label><input type="checkbox" checked>
+						<label>
+							<input type="checkbox" checked>
 							<abbr title="promotion et distribution de préservatifs (masculins, féminins, gels lubrifiants).">Promotion de préservatifs</abbr>
 						</label>
-						<label><input type="checkbox" checked>
+						<label>
+							<input type="checkbox" checked>
 							<abbr title="Sensibilisation lors de manifestations ou évènements culturels, Unité Mobile Vidéo, Programme radiophonique, programme télévisé, etc...">Communication de masse</abbr>
 						</label>
-						<label><input type="checkbox" checked>
+						<label>
+							<input type="checkbox" checked>
 							Prise en charge IST
 						</label>
-						<label><input type="checkbox" checked>
+						<label>
+							<input type="checkbox" checked>
 							<abbr title="action de dépistage du virus et conseils">Dépistage</abbr>
 						</label>
-						<label><input type="checkbox" checked>
+						<label>
+							<input type="checkbox" checked>
 							<abbr title="Prise en charge IST et Prise en charge médicale des PVVIH (suivi biologique, traitement ARV, traitement des infections opportunistes). ">Prise en charge médicale</abbr>
 						</label>
-						<label><input type="checkbox" checked>
+						<label>
+							<input type="checkbox" checked>
 							<abbr title="soutiens des personnes infectées et affectées par le VIH (prise en charge psychosociale, appuis nutritionnels, appuis économiques, éducation thérapeutique, conseil, etc)">Soutien</abbr>
 						</label>
-						<label><input type="checkbox" checked>
+						<label>
+							<input type="checkbox" checked>
 							<abbr title="Coordination et suivi, évaluation">Coordination</abbr>
 						</label>
-						<label><input type="checkbox" checked>
+						<label>
+							<input type="checkbox" checked>
 							Renforcement des capacités
 						</label>
 				      </div>
@@ -119,7 +131,8 @@
 				      <h4 class="panel-title">
 				        <a class="collapsed panel-title-inner" data-toggle="collapse"  href="#population" aria-expanded="false" aria-controls="population" >
 				          Populations
-				          <span class="panelStatus">
+				          <span class="panelFilterStatus" data-countof="population"></span> 
+				          <span class="panelCollapsedStatus">
 				          	<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
 				          	<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
 				          </span>
@@ -127,7 +140,7 @@
 				      </h4>
 				    </div>
 				    <div id="population" class="panel-collapse collapse" role="tabpanel" aria-labelledby="populationHeading">
-				      <div class="panel-body checkboxList">
+				      <div class="panel-body checkboxList js-filterFieldList">
 
 
 				      	<div class="checkboxList-sectionTitle">Adultes</div>
@@ -216,8 +229,8 @@
 				    <div class="panel-heading" role="tab" id="dateHeading">
 				      <h4 class="panel-title">
 				        <a class="collapsed panel-title-inner" data-toggle="collapse" href="#date" aria-expanded="false" aria-controls="date">
-				          Dates: jan. 2010 → jan. 2015
-				          <span class="panelStatus">
+				          Dates <span class="panelFilterStatus">jan. 2010 → jan. 2015</span>
+				          <span class="panelCollapsedStatus">
 				          	<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
 				          	<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
 				          </span>
@@ -262,7 +275,7 @@
 				        <h4 class="panel-title">
 					        <a class="collapsed panel-title-inner" data-toggle="collapse" href="#province" aria-expanded="false" aria-controls="province">
 					          Zoomer sur une province 
-					          <span class="panelStatus">
+					          <span class="panelCollapsedStatus">
 					          	<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
 					          	<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
 					          </span>
@@ -273,11 +286,11 @@
 				     <div id="province" class="panel-collapse collapse" role="tabpanel" aria-labelledby="dateHeading">
 					      <ul class="js-province">
 								<li><a href="#" data-latlon="-19.006295,46.944580">Antananarivo</a></li>
-					            <li><a href="#">Antsiranana</a></li>
-					            <li><a href="#">Fianarantsoa</a></li>
-					            <li><a href="#">Mahajanga</a></li>
-					            <li><a href="#">Toamasina</a></li>
-					            <li><a href="#">Toliara</a></li>
+					            <li><a href="#" data-latlon="-12.515017, 49.268188">Antsiranana</a></li>
+					            <li><a href="#" data-latlon="-21.453611, 47.085833">Fianarantsoa</a></li>
+					            <li><a href="#" data-latlon="-15.716667, 46.316667">Mahajanga</a></li>
+					            <li><a href="#" data-latlon="-18.150000, 49.416667">Toamasina</a></li>
+					            <li><a href="#" data-latlon="-23.350000, 43.666667">Toliara</a></li>
 				            </ul>
 				    </div>
 			  	</div><!--/province panel -->
