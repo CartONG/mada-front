@@ -4,7 +4,8 @@
 var $               = window.$ = window.jQuery = require('jquery');
 var _               = window._ = require('underscore');
 
-require('leaflet');
-require('leaflet-markercluster');
-
 require('bootstrap');
+
+require('leaflet');
+
+// require('leaflet-markercluster'); //nope :(

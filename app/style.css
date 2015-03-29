@@ -16,6 +16,21 @@
 	overflow: auto;
 }
 
+
+.leaflet-popup-content-wrapper {
+	border-radius: 4px;
+}
+
+.popup-table tr td:first-child {
+  font-weight: bold;
+  text-align: right;
+}
+
+.popup-table td {
+  padding: 10px;
+}
+
+
 .panel {
 	border: 0;
 }
@@ -33,6 +48,7 @@
 
 .panel-heading {
 	background-color: #ddd;
+	padding: 0;
 }
 
 
@@ -41,13 +57,15 @@
 	border-top-right-radius: 0px;
 }
 
-.panel-title a {
+.panel-title .panel-title-inner {
 	width: 100%;
 	display: inline-block;
 	position: relative;
+	padding: 10px 15px;
 }
 
-.panel-title a:not(.collapsed) .glyphicon-triangle-left {
+
+.panel-title a:not(.collapsed) .glyphicon-triangle-right {
 	display: none;
 }
 
@@ -58,7 +76,8 @@
 .panelStatus {
 	position: absolute;
  	right: 10px;
-	/*top: 10px;*/
+	top: 35%;
+	font-size: 1rem;
 }
 .checkboxList label {
 	display: block;

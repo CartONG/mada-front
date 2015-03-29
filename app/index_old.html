@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<title>Actions de lutte contre le SIDA à Madagascar</title>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/leaflet.css">
@@ -13,11 +10,11 @@
 	<link rel="stylesheet" type="text/css" href="./css/MarkerCluster.Default.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 
-
+	<script type="text/javascript" src="leaflet.js"></script>
+	<script type="text/javascript" src="leaflet.markercluster.js"></script>
 </head>
 <body>
-
-<nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       	<div class="container-fluid">
 	        <div class="navbar-header">
 	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -33,6 +30,7 @@
 	            <li class="active"><a href="#">Carte</a></li>
 	            <li><a href="#">À propos</a></li>
 	            <li><a href="#about">Connexion</a></li>
+	            <!-- <li><a href="#contact">Contact</a></li> -->
 	          </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>
@@ -294,40 +292,11 @@
 
 
 	<div id="map"></div>
-
-	<script type="text/template" class="js-tpl-popup">
-		<table class="popup-table table table-striped">
-			<tr>
-				<td>ONG</td>
-				<td><%= data.nom_ong %></td>
-			</tr>
-			<tr>
-				<td>Opérateur</td>
-				<td><%= data.operateur %></td>
-			</tr>
-			<tr>
-				<td>Catégorie</td>
-				<td><%= data.categorie %></td>
-			</tr>
-			<tr>
-				<td>Public</td>
-				<td><%= data.public %></td>
-			</tr>
-			<tr>
-				<td>Début</td>
-				<td><%= data.debut %></td>
-			</tr>
-			<tr>
-				<td>Fin</td>
-				<td><%= data.fin %></td>
-			</tr>
-		</table>
+	<script>
+	debugger;
 
 	</script>
 
-	<script type="text/javascript" src="./dependencies.js"></script>
-	<!-- TODO: fix hard dependency -->
-	<script src="./leaflet.markercluster.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 </body>
 </html>
