@@ -1,4 +1,69 @@
+
 #map {
 	width: 100%;
-	height: 400px;
+	height: calc(100% - 50px);
+	top: 50px;
+	position: absolute;
+}
+
+#filters {
+	position: absolute;
+	right: 30px;
+	top: 80px;
+	width: 350px;
+	z-index: 99;
+	height: calc(100% - 120px);
+	overflow: auto;
+}
+
+.panel {
+	border: 0;
+}
+
+.panel--outer {
+	box-shadow: 3px 3px 10px rgba(0,0,0,.15);
+	-webkit-box-shadow: 3px 3px 10px rgba(0,0,0,.15);
+}
+
+.panel--inner {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+
+.panel-heading {
+	background-color: #ddd;
+}
+
+
+.panel--inner .panel-heading {
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+.panel-title a {
+	width: 100%;
+	display: inline-block;
+	position: relative;
+}
+
+.panel-title a:not(.collapsed) .glyphicon-triangle-left {
+	display: none;
+}
+
+.panel-title a.collapsed .glyphicon-triangle-bottom {
+	display: none;
+}
+
+.panelStatus {
+	position: absolute;
+ 	right: 10px;
+	/*top: 10px;*/
+}
+.checkboxList label {
+	display: block;
+}
+
+.checkboxList-sectionTitle {
+	font-variant:small-caps;
 }

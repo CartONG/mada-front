@@ -1,7 +1,7 @@
 (function () {
 	var map = L.map('map', {
-		center: [51.505, -0.09],
-		zoom: 13
+		center: [-18.766947, 49],
+		zoom: 6
 	});
 
 	L.tileLayer('https://{s}.tiles.mapbox.com/v3/{key}/{z}/{x}/{y}.png', {
