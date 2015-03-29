@@ -1,6 +1,7 @@
 
 var gulp = require('gulp'),
 browserify = require('gulp-browserify'),
+uglify = require('gulp-uglify'),
 browserSync = require('browser-sync');
 
 gulp.task('default', function() {
@@ -28,6 +29,7 @@ var pipes = {
                 insertGlobals : false,
                 debug : true,
             }))
+            .pipe(uglify())
             .pipe(gulp.dest('./app/'))
     }
 }
