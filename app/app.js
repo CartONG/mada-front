@@ -66,5 +66,12 @@
 		map.setView(latlon, 8);
 	});
 
+	$('.js-showfilters').on('click', function (e) {
+		$('.js-filters').addClass('opened');
+	});
+
+	$('.js-closeFilters').on('click', function(e) {
+		$('.js-filters').removeClass('opened');
+	});
 
 })()
