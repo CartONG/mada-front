@@ -1,0 +1,28 @@
+{
+  "name": "onusida-carto-mada",
+  "version": "0.0.0",
+  "description": "A interactive map of humanitarian actions against AIDS in Madagascar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nerik/onusida-carto-mada.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nerik/onusida-carto-mada/issues"
+  },
+  "homepage": "https://github.com/nerik/onusida-carto-mada",
+  "dependencies": {
+    "leaflet": "^0.7.3",
+    "leaflet-markercluster": "^0.2.0",
+    "bootstrap": "^3.3.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "browser-sync": "^2.4.0"
+  }
+}
