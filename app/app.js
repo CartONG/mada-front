@@ -94,7 +94,7 @@
 
 	//move that to a sass loop later :)
 	_.each($('#actionType .checkboxList input'), function(el, index) {
-		$('<span class="icon"></span>').insertAfter(el).css('background-position', '-' + index * 30 + 'px' + ' 0');
+		$('<span class="icon"></span>').insertBefore(el).css('background-position', '-' + index * 30 + 'px' + ' 0');
 	});
 
 })()

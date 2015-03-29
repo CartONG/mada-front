@@ -166,6 +166,10 @@ body
 	line-height: 1.8rem;
 }
 
+label {
+	font-weight: normal;
+}
+
 .checkboxList .icon {
 	display: inline-block;
 	background-repeat: no-repeat;
