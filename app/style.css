@@ -11,7 +11,7 @@ body
 	position: absolute;
 }
 
-a {
+a.underline {
 	text-decoration: underline;
 }
 
