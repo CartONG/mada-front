@@ -11,6 +11,10 @@ body
 	position: absolute;
 }
 
+a {
+	text-decoration: underline;
+}
+
 #filters, #filters-button {
 	position: absolute;
 }
@@ -196,7 +200,10 @@ label {
 
 .popup-title {
   font-size: 18px;
-  margin: 14px;
+}
+
+.popup-title, .popup-link {
+	  margin: 14px;
 }
 
 .leaflet-popup-content {

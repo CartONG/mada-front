@@ -30,6 +30,6 @@ var pipes = {
                 debug : true,
             }))
             .pipe(uglify())
-            .pipe(gulp.dest('./app/'))
+            .pipe(gulp.dest('./app/'));
     }
-}
+};
