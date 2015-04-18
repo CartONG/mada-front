@@ -49,6 +49,7 @@ a {
     	height: 60%;
     	-webkit-transition: top 0.3s;
     	transition:top 0.3s;
+    	background-color: #fff;
   	}
 
 
@@ -92,6 +93,8 @@ a {
 		width: calc(100% - 20px);
 		height: 50px;
   	}
+
+
 }
 
 
@@ -111,6 +114,11 @@ a {
 
 .panel {
 	border: 0;
+	background-color: transparent;
+}
+
+.panel-body {
+	background-color: rgba(255,255,255,.8)
 }
 
 .panel--outer {
