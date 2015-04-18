@@ -191,3 +191,14 @@ label {
 	color: #999;
 	font-style: italic; 
 }
+
+
+
+.popup-title {
+  font-size: 18px;
+  margin: 14px;
+}
+
+.leaflet-popup-content {
+	margin: 0;
+}

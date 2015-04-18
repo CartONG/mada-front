@@ -9,7 +9,8 @@
       "categorie": "prévention",
       "public": "jeunes",
       "debut": "2013/01/01",
-      "fin": "2013/03/03"
+      "fin": "2013/03/03",
+      "status": "completed"
     },
     {
       "-fid": "test_onusida.1",
@@ -20,7 +21,8 @@
       "zone": "Bongolava",
       "public": "jeunes",
       "debut": "2014/02/02",
-      "fin": "2014/10/10"
+      "fin": "2014/10/10",
+      "status": "completed"
     },
     {
       "-fid": "test_onusida.2",
@@ -30,7 +32,8 @@
       "categorie": "soutien",
       "public": "CDI",
       "debut": "2014/02/02",
-      "fin": "2014/10/10"
+      "fin": "2014/10/10",
+      "status": "pending"
     },
     {
       "-fid": "test_onusida.3",
@@ -41,7 +44,8 @@
       "zone": "Haute matsiatra",
       "public": "MSM",
       "debut": "2013/01/01",
-      "fin": "2013/03/03"
+      "fin": "2013/03/03",
+      "status": "completed"
     },
     {
       "-fid": "test_onusida.4",
@@ -52,7 +56,8 @@
       "zone": "Vakinankaratra",
       "public": "TdS",
       "debut": "2014/02/02",
-      "fin": "2014/10/10"
+      "fin": "2014/10/10",
+      "status": "pending"
     },
     {
       "-fid": "test_onusida.5",
@@ -63,7 +68,8 @@
       "zone": "Amoroni mania",
       "public": "population générale",
       "debut": "2014/02/02",
-      "fin": "2014/10/10"
+      "fin": "2014/10/10",
+      "status": "pending"
     },
     {
       "-fid": "test_onusida.6",
@@ -74,7 +80,8 @@
       "zone": "Sofia",
       "public": "orphelins",
       "debut": "2013/01/01",
-      "fin": "2013/03/03"
+      "fin": "2013/03/03",
+      "status": "completed"
     },
     {
       "-fid": "test_onusida.7",
@@ -85,7 +92,8 @@
       "zone": "Alaotra-Mangoro",
       "public": "femmes",
       "debut": "2014/02/02",
-      "fin": "2014/10/10"
+      "fin": "2014/10/10",
+      "status": "pending"
     },
     {
       "-fid": "test_onusida.8",
@@ -96,7 +104,8 @@
       "zone": "Sava",
       "public": "jeunes",
       "debut": "2012/01/01",
-      "fin": "2012/12/12"
+      "fin": "2012/12/12",
+      "status": "pending"
     },
     {
       "-fid": "test_onusida.9",
@@ -107,7 +116,8 @@
       "zone": "Ihorombe",
       "public": "forces armées",
       "debut": "2013/01/01",
-      "fin": "2013/03/03"
+      "fin": "2013/03/03",
+      "status": "completed"
     },
     {
       "-fid": "test_onusida.10",
@@ -118,7 +128,8 @@
       "zone": "Melaky",
       "public": "églises",
       "debut": "2012/01/01",
-      "fin": "2012/12/12"
+      "fin": "2012/12/12",
+      "status": "pending"
     },
     {
       "-fid": "test_onusida.11",
@@ -129,7 +140,8 @@
       "zone": "Analanjirofo",
       "public": "PVVIH",
       "debut": "2012/01/01",
-      "fin": "2012/12/12"
+      "fin": "2012/12/12",
+      "status": "completed"
     },
     {
       "-fid": "test_onusida.12",
@@ -141,7 +153,8 @@
       "zone": "Diana",
       "public": "général",
       "debut": "2013/01/01",
-      "fin": "2013/03/03"
+      "fin": "2013/03/03",
+      "status": "pending"
     },
     {
       "-fid": "test_onusida.13",
@@ -153,7 +166,8 @@
       "zone": "Betsiboka",
       "public": "orphelins",
       "debut": "2012/01/01",
-      "fin": "2012/12/12"
+      "fin": "2012/12/12",
+      "status": "completed"
     },
     {
       "-fid": "test_onusida.14",
@@ -165,7 +179,8 @@
       "zone": "Menabe",
       "public": "population carcérale",
       "debut": "2012/01/01",
-      "fin": "2012/12/12"
+      "fin": "2012/12/12",
+      "status": "pending"
     },
     {
       "-fid": "test_onusida.14",
@@ -177,7 +192,8 @@
       "zone": "Menabe",
       "public": "population carcérale",
       "debut": "2012/01/01",
-      "fin": "2012/12/12"
+      "fin": "2012/12/12",
+      "status": "completed"
     },
     {
       "-fid": "test_onusida.14",
@@ -189,7 +205,8 @@
       "zone": "Menabe",
       "public": "population carcérale",
       "debut": "2012/01/01",
-      "fin": "2012/12/12"
+      "fin": "2012/12/12",
+      "status": "pending"
     }
 
 

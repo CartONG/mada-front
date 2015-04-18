@@ -326,7 +326,17 @@
 
 	<div id="map"></div>
 
+
 	<script type="text/template" class="js-tpl-popup">
+		<div class="popup-title">
+			Titre de l'action
+			<% if (data.status === 'completed') { %>
+				<span class="label label-default">terminée</span>
+			<% } else if (data.status === 'pending') { %>
+				<span class="label label-warning">en cours</span>
+			<% } %>
+
+		</div>
 		<table class="popup-table table table-striped">
 			<tr>
 				<td>ONG</td>
