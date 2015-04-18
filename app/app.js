@@ -9,11 +9,7 @@
 		maxZoom: 10
 	});
 
-	L.tileLayer('https://{s}.tiles.mapbox.com/v3/{key}/{z}/{x}/{y}.png', {
-		key: 'lrqdo.2c2d7d96',
-		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-	}).addTo(map);
-
+	L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png').addTo(map);
 	
 	$.ajax('./testData.json').done( renderMarkers ); 
 
@@ -40,7 +36,7 @@
 	    	marker.data = markerData;
 	    	marker.on('click', onMarkerClick);
 
-	    })
+	    });
 		
 		map.addLayer(markerClusters);
 	}
@@ -87,7 +83,7 @@
 			$('[data-countof='+name+']').text( _.contains(values, false) ? _.compact(values).length + '/' + values.length : 'toutes' );
 	
 		}
-	};
+	}
 
 	updateFilters();
 
@@ -97,4 +93,4 @@
 		$('<span class="icon"></span>').insertBefore(el).css('background-position', '-' + index * 30 + 'px' + ' 0');
 	});
 
-})()
+})();
