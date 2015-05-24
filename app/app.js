@@ -15,6 +15,11 @@
 
 	var popupTpl = _.template( $('.js-tpl-popup').html() );
 
+	var regionsListContainer = $('.js-regions');
+	var regionListItemTpl = _.template('<li><a href="#" data-latlon="<%= center %>"><%= name %></a></li>');
+	var regionsGeoJson;
+	var regionsShapes;
+
 
 	function renderMarkers(data) {
 		
@@ -51,16 +56,27 @@
         marker.openPopup();
     }
 
+    function initRegionsListEvents() {
+    	regionsListContainer.find('a').each(function() {
+    		console.log(arguments)
+    	})
+		regionsListContainer.find('a').on('click', function (e) {
+			var latlonStr = $(e.currentTarget).data('latlon');
+			var latlon = latlonStr.split(',');
 
-	$('.js-province a').on('click', function (e) {
-		var latlonStr = $(e.currentTarget).data('latlon');
-		var latlon = latlonStr.split(',');
+			//shift a bit to the west to compensate space taken by right controls
+			//TODO : only desktop
+			latlon[1] = parseFloat(latlon[1]) + 1;
+			map.setView(latlon, 8);
 
-		//shift a bit to the west to compensate space taken by right controls
-		//TODO : only desktop
-		latlon[1] = parseFloat(latlon[1]) + 1;
-		map.setView(latlon, 8);
-	});
+			if (regionsShapes) map.removeLayer(regionsShapes);
+			regionsShapes = L.geoJson(regionsGeoJson, {
+				filter: function(feature) {
+					return feature.properties.NAME_2 === $(this).html();
+				}.bind(this)
+			}).addTo(map);
+		});
+	}
 
 	$('.js-showfilters').on('click', function (e) {
 		$('.js-filters').addClass('opened');
@@ -97,13 +113,21 @@
 		$('<span class="icon"></span>').insertBefore(el).css('background-position', '-' + index * 30 + 'px' + ' 0');
 	});
 
-	$.getJSON( 'geo/faritra6.json' , function(geojson) {
-		// console.log(arguments)
-		L.geoJson(geojson, {
+	$.getJSON( 'geo/faritra.json' , function(geojson) {
+		regionsGeoJson = geojson;
+		regionsShapes = L.geoJson(geojson, {
 			onEachFeature: function(feature, layer) {
-				debugger;
+				var center = layer.getBounds().getCenter();
+				var regionListItem = regionListItemTpl({
+					name: feature.properties.NAME_2,
+					center: center.lat + ',' + center.lng
+				})
+				$(regionListItem).appendTo(regionsListContainer);
+				console.log(feature)
 			}
-		}).addTo(map);
+		});
+
+		initRegionsListEvents();
 	} )
 
 })();
