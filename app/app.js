@@ -97,4 +97,13 @@
 		$('<span class="icon"></span>').insertBefore(el).css('background-position', '-' + index * 30 + 'px' + ' 0');
 	});
 
+	$.getJSON( 'geo/faritra6.json' , function(geojson) {
+		// console.log(arguments)
+		L.geoJson(geojson, {
+			onEachFeature: function(feature, layer) {
+				debugger;
+			}
+		}).addTo(map);
+	} )
+
 })();
