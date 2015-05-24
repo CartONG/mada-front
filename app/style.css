@@ -190,7 +190,11 @@ label {
 }
 
 #actionType .checkboxList .icon {
-	background-image: url('./images/actionType-sprites.png');
+	background-image: url('./images/actionType-sprites.svg');
+}
+
+#population .checkboxList .icon {
+	background-image: url('./images/population-sprites.svg');
 }
 
 

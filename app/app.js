@@ -93,4 +93,8 @@
 		$('<span class="icon"></span>').insertBefore(el).css('background-position', '-' + index * 30 + 'px' + ' 0');
 	});
 
+	_.each($('#population .checkboxList input'), function(el, index) {
+		$('<span class="icon"></span>').insertBefore(el).css('background-position', '-' + index * 30 + 'px' + ' 0');
+	});
+
 })();
