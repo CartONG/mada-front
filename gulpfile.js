@@ -8,7 +8,7 @@ var browserSync = require('browser-sync');
 var plugins = require('gulp-load-plugins')();
 
 var config = {
-    currentProject: 'onusida',
+    currentProject: 'atlas',
 
     projects: {
         onusida: {
@@ -20,20 +20,27 @@ var config = {
     }
 };
 
-function getLocalizedTemplateStream(locale) {
+function getLocalizedTemplateStream(locale, index) {
+    console.log(locale)
     var data = {
         trans: require(`./src/i18n/${locale}.json`)
     };
     data.trans.project = require(`./src/i18n/${config.currentProject}/${locale}.json`);
 
-    return gulp.src(`src/tpl/${config.currentProject}.html`)
-            .pipe(plugins.fileInclude())
-            .pipe(plugins.template(data, {
-                interpolate: /{{([\s\S]+?)}}/g,
-                evaluate: /{\?([\s\S]+?)\?}/g
-                // escape: /XXX/g
-            }))
-            .pipe(gulp.dest(path.join('dist', config.currentProject)));
+    return gulp.src(`src/tpl/${config.currentProject}.tpl.html`)
+        .pipe(plugins.fileInclude())
+        .pipe(plugins.template(data, {
+            interpolate: /{{([\s\S]+?)}}/g,
+            evaluate: /{\?([\s\S]+?)\?}/g
+            // escape: /XXX/g
+        }))
+        .pipe(plugins.rename(function (renamePath) {
+            renamePath.basename = 'index';
+            if (index > 0) {
+                renamePath.basename += `.${locale}`;
+            }
+        }))
+        .pipe(gulp.dest(path.join('dist', config.currentProject)));
 }
 
 
@@ -46,7 +53,9 @@ gulp.task('default', function() {
         port: 3333
     });
 
-    gulp.watch('./src/**/*', ['build']);
+    gulp.watch('./src/**/*', ['build'], function() {
+        console.log('pouet');
+    });
 
     gulp.watch('./dist/**/*', function () {
         browserSync.reload();
@@ -67,8 +76,8 @@ gulp.task('templates', function() {
     var projectConfig = config.projects[config.currentProject];
     var streams = merge();
 
-    projectConfig.locales.forEach(function(locale) {
-        streams.add(getLocalizedTemplateStream(locale));
+    projectConfig.locales.forEach(function(locale, index) {
+        streams.add(getLocalizedTemplateStream(locale, index));
     });
 
     return streams;
