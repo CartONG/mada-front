@@ -1,0 +1,9 @@
+{
+    "title": "Actions de lutte contre le SIDA à Madagascar",
+    "actionTypes": [
+        {
+            "title": "Plaidoyer",
+            "desc": "action visant à changer les comportements et à influencer les politiques. Ce genre d'interventions consiste en des actions d'informations, de sensibilisation, renforcement des capacités, d'établissement de réseaux/partenariats et aussi de lobbying"
+        }
+    ]
+}
