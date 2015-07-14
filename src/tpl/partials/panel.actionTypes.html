@@ -17,11 +17,10 @@
 
     <div id="actionType" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="actionTypeHeading">
       <div class="panel-body checkboxList js-filterFieldList">
-      dsfdfdsf
-        {? trans.project.actionTypes.forEach(function() { ?}
+        {? trans.project.actionTypes.forEach(function(actionType) { ?}
             <label>
                 <input type="checkbox" checked>
-                <abbr title="action visant à changer les comportements et à influencer les politiques. Ce genre d'interventions consiste en des actions d'informations, de sensibilisation, renforcement des capacités, d'établissement de réseaux/partenariats et aussi de lobbying.">Plaidoyer</abbr>
+                <abbr title="{{actionType.description}}">{{actionType.title}}</abbr>
             </label>
         {? }) ?}
         <label>

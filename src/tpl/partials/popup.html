@@ -1,0 +1,44 @@
+
+<script type="text/template" class="js-tpl-popup">
+    <div class="popup-title">
+        Titre de l'action
+        <% if (data.status === 'completed') { %>
+            <span class="label label-default">terminée</span>
+        <% } else if (data.status === 'pending') { %>
+            <span class="label label-warning">en cours</span>
+        <% } %>
+
+    </div>
+    <table class="popup-table table table-striped">
+        <tr>
+            <td>ONG</td>
+            <td><%= data.nom_ong %></td>
+        </tr>
+        <tr>
+            <td>Opérateur</td>
+            <td><%= data.operateur %></td>
+        </tr>
+        <tr>
+            <td>Catégorie</td>
+            <td><%= data.categorie %></td>
+        </tr>
+        <tr>
+            <td>Public</td>
+            <td><%= data.public %></td>
+        </tr>
+        <!--
+        <tr>
+            <td>Début</td>
+            <td><%= data.debut %></td>
+        </tr>
+        <tr>
+            <td>Fin</td>
+            <td><%= data.fin %></td>
+        </tr>
+        -->
+    </table>
+    <div class="popup-link">
+        <a class="underline" href="#" target="_blank">Détails</a>
+    </div>
+
+</script>
