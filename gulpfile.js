@@ -8,7 +8,7 @@ var browserSync = require('browser-sync');
 var plugins = require('gulp-load-plugins')();
 
 var config = {
-    currentProject: 'atlas',
+    currentProject: 'onusida',
 
     projects: {
         onusida: {
