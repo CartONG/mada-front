@@ -44,7 +44,7 @@ function getLocalizedTemplateStream(locale, index) {
 }
 
 
-gulp.task('serve', function() {
+gulp.task('serve', ['build'], function() {
     browserSync({
         server: {
             baseDir: './dist'
@@ -53,9 +53,8 @@ gulp.task('serve', function() {
         port: 3333
     });
 
-    gulp.watch('./src/**/*', ['build'], function() {
-        console.log('pouet');
-    });
+    gulp.watch(['./src/i18n/**/*', './src/tpl/**/*'], ['templates']);
+    gulp.watch(['./src/static/**/*'], ['static']);
 
     gulp.watch('./dist/**/*', function () {
         browserSync.reload();
@@ -83,7 +82,7 @@ gulp.task('templates', function() {
     return streams;
 });
 
-gulp.task('static', function() {
+gulp.task('static_common', function() {
     return gulp.src('./src/static/_common/**/*')
         .pipe(gulp.dest(path.join('dist', config.currentProject)));
 });
@@ -94,8 +93,10 @@ gulp.task('static_project', function() {
 });
 
 
-gulp.task('build', ['templates', 'static', 'static_project']);
+gulp.task('static', ['static_common', 'static_project']);
 
-gulp.task('default', ['build', 'serve']);
+gulp.task('build', ['templates', 'static']);
+
+gulp.task('default', ['serve']);
 
 
