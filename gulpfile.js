@@ -8,7 +8,7 @@ var browserSync = require('browser-sync');
 var plugins = require('gulp-load-plugins')();
 
 var config = {
-    currentProject: 'onusida',
+    currentProject: 'atlas',
 
     projects: {
         onusida: {
@@ -21,8 +21,8 @@ var config = {
 };
 
 function getLocalizedTemplateStream(locale, index) {
-    console.log(locale)
     var data = {
+        project: config.currentProject,
         trans: require(`./src/i18n/${locale}.json`)
     };
     data.trans.project = require(`./src/i18n/${config.currentProject}/${locale}.json`);
@@ -44,7 +44,7 @@ function getLocalizedTemplateStream(locale, index) {
 }
 
 
-gulp.task('default', function() {
+gulp.task('serve', function() {
     browserSync({
         server: {
             baseDir: './dist'
@@ -84,11 +84,18 @@ gulp.task('templates', function() {
 });
 
 gulp.task('static', function() {
-    return gulp.src('./src/static/**/*')
+    return gulp.src('./src/static/_common/**/*')
+        .pipe(gulp.dest(path.join('dist', config.currentProject)));
+});
+
+gulp.task('static_project', function() {
+    return gulp.src(`./src/static/${config.currentProject}/**/*`)
         .pipe(gulp.dest(path.join('dist', config.currentProject)));
 });
 
 
-gulp.task('build', ['templates', 'static']);
+gulp.task('build', ['templates', 'static', 'static_project']);
+
+gulp.task('default', ['build', 'serve']);
 
 
