@@ -4,3 +4,6 @@
 .navbar-brand img {
     height: 100%;
 }
+.navbar-nav img {
+    width: 30px;
+}
