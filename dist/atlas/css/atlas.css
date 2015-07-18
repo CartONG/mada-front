@@ -1,3 +1,6 @@
-.navbar {
-    background-color: #F00;
+.navbar-brand {
+    padding: 4px 16px;
+}
+.navbar-brand img {
+    height: 100%;
 }
