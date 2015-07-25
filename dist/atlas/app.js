@@ -19,21 +19,13 @@
 
         var geoJsonLayer = L.geoJson(data, {
             onEachFeature: function (feature, layer) {
-                layer.on('click', onMarkerClick);
+                var popupData = feature.properties;
+                var popup = L.popup().setContent( popupTpl( {data: popupData }) );
+                layer.bindPopup(popup).openPopup();
             }
         });
         markerClusters.addLayer(geoJsonLayer);
         map.addLayer(markerClusters);
-    }
-
-    function onMarkerClick(e) {
-        var marker = e.target;
-        var popupData = marker.feature.properties;
-
-        //wrap data in an object to avoid ref errors when rendering template
-        var popup = L.popup().setContent( popupTpl( {data: popupData }) );
-        marker.bindPopup( popup );
-        marker.openPopup();
     }
 
     function initRegionsListEvents() {
