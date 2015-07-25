@@ -9,10 +9,10 @@
     "search_button": "Rechercher",
     "search_placeholder": "Recherche",
     "provinces_title": "Zoomer sur une region (<em>faritra</em>)",
-    "popup_status0": "à venir",
-    "popup_status1": "en cours",
-    "popup_status2": "terminé",
-    "popup_NGO": "Organisme",
-    "popup_places": "Lieux",
-    "popup_description": "Description"
+    "action_status0": "à venir",
+    "action_status1": "en cours",
+    "action_status2": "terminée",
+    "action_NGO": "Organisme",
+    "action_places": "Lieux",
+    "action_description": "Description"
 }
