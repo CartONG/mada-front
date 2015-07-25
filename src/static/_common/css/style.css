@@ -28,7 +28,7 @@ a.underline {
 }
 
 .filters-inner {
-	overflow-y: auto;	
+	overflow-y: auto;
 	height: 100%;
 }
 
@@ -205,7 +205,7 @@ label {
 
 .panelFilterStatus {
 	color: #999;
-	font-style: italic; 
+	font-style: italic;
 }
 
 
@@ -220,4 +220,11 @@ label {
 
 .leaflet-popup-content {
 	margin: 0;
+}
+
+.popup-truncate {
+	width: 200px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
