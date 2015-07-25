@@ -190,11 +190,13 @@
         <div class="popup-title">
             <%= data.titre %>
             <% if (data.avancement === 1) { %>
-                <span class="label label-default">terminée</span>
+                <span class="label label-default">en cours</span>
             <% } else if (data.avancement === 2) { %>
-                <span class="label label-warning">en cours</span>
+                <span class="label label-warning">terminée</span>
             <% } else if (data.avancement === 3) { %>
-                <span class="label label-warning">à venir</span>
+                <span class="label label-warning"></span>
+            <% } else if (data.avancement === 4) { %>
+                <span class="label label-warning"></span>
             <% } %>
 
         </div>

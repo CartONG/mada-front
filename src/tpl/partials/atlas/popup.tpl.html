@@ -3,11 +3,13 @@
         <div class="popup-title">
             <%= data.titre %>
             <% if (data.avancement === 1) { %>
-                <span class="label label-default">{{trans.action_status2}}</span>
+                <span class="label label-default">{{trans.action_status1}}</span>
             <% } else if (data.avancement === 2) { %>
-                <span class="label label-warning">{{trans.action_status1}}</span>
+                <span class="label label-warning">{{trans.action_status2}}</span>
             <% } else if (data.avancement === 3) { %>
-                <span class="label label-warning">{{trans.action_status0}}</span>
+                <span class="label label-warning">{{trans.action_status3}}</span>
+            <% } else if (data.avancement === 4) { %>
+                <span class="label label-warning">{{trans.action_status4}}</span>
             <% } %>
 
         </div>
