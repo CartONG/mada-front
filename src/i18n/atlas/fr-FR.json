@@ -1,26 +1,35 @@
 {
     "title": "Atlas Solidarité Madagascar",
     "actionTypes": {
-        "0": {
-            "title": "Environnement"
+        "10": {
+            "title": "micro-crédit"
         },
-        "1": {
-            "title": "Tourisme"
+        "9": {
+            "title": "protection sociale"
         },
-        "2": {
-            "title": "Développement rural"
+        "8": {
+            "title": "justice"
         },
-        "3": {
-            "title": "Accès à l'eau"
-        },
-        "4": {
-            "title": "Santé"
-        },
-        "5": {
-            "title": "Éducation"
+        "7": {
+            "title": "éducation"
         },
         "6": {
-            "title": "?"
+            "title": "santé"
+        },
+        "5": {
+            "title": "eau/assainissement"
+        },
+        "4": {
+            "title": "développement rural"
+        },
+        "3": {
+            "title": "tourisme"
+        },
+        "2": {
+            "title": "environnement"
+        },
+        "1": {
+            "title": "formation conseil"
         }
     },
     "about_title": "À propos de l'Atlas solidarité",
