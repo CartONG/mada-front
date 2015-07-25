@@ -19,7 +19,7 @@
             <div id="navbar" class="navbar-collapse collapse navbar-right" aria-expanded="false" style="height: 1px;">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#">{{trans.navigation_map}}</a></li>
-                <li><a href="#">{{trans.navigation_about}}</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#js-about-modal">{{trans.navigation_about}}</a></li>
                 <li><a href="http://195.154.35.191:8000/admin" target="_blank">{{trans.navigation_signin}}</a></li>
                 <li><a href="index.html"><img alt="Français" src="./images/locale_fr-FR.svg"></a></li>
                 <li><a href="index.mg-MG.html"><img alt="Malagasy" src="./images/locale_mg-MG.svg"></a></li>
@@ -83,7 +83,22 @@
 
     @@include('./partials/atlas/modal.tpl.html')
 
-
+    <div class="modal fade" id="js-about-modal" tabindex="-1" role="dialog" aria-labelledby="js-about-modal-title">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="{{trans.navigation_close}}"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="js-about-modal-title">{{trans.project.about_title}}</h4>
+          </div>
+          <div class="modal-body">
+            {{trans.project.about_content}}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">{{trans.navigation_close}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script type="text/javascript" src="./dependencies.js"></script>
     <!-- TODO: fix hard dependency -->

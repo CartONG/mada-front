@@ -36,7 +36,7 @@
             <div id="navbar" class="navbar-collapse collapse navbar-right" aria-expanded="false" style="height: 1px;">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Carte !!</a></li>
-                <li><a href="#">À propos</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#js-about-modal">À propos</a></li>
                 <li><a href="http://195.154.35.191:8000/admin" target="_blank">Connexion</a></li>
                 <li><a href="index.html"><img alt="Français" src="./images/locale_fr-FR.svg"></a></li>
                 <li><a href="index.mg-MG.html"><img alt="Malagasy" src="./images/locale_mg-MG.svg"></a></li>
@@ -135,11 +135,10 @@
     </div>
 </div><!--/actionType panel -->
 
-                
-<div class="panel panel--inner">
+                <div class="panel panel--inner">
     <div class="panel-heading" role="tab" id="provinceHeading">
         <h4 class="panel-title">
-            <a class="collapsed panel-title-inner" data-toggle="collapse" href="#province" aria-expanded="false" aria-controls="province">
+            <a data-toggle="collapse" href="#province" aria-expanded="true" aria-controls="province" class="panel-title-inner">
               Zoomer sur une region (<em>faritra</em>)
               <span class="panelCollapsedStatus">
                 <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
@@ -149,7 +148,7 @@
           </h4>
     </div>
 
-     <div id="province" class="panel-collapse collapse" role="tabpanel" aria-labelledby="provinceHeading">
+     <div id="province" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="provinceHeading">
         <div class="panel-body">
             <ul class="js-regions">
 
@@ -244,7 +243,22 @@
 </script>
 
 
-
+    <div class="modal fade" id="js-about-modal" tabindex="-1" role="dialog" aria-labelledby="js-about-modal-title">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Fermer"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="js-about-modal-title">À propos de l'Atlas solidarité</h4>
+          </div>
+          <div class="modal-body">
+            À remplir...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script type="text/javascript" src="./dependencies.js"></script>
     <!-- TODO: fix hard dependency -->
