@@ -1,7 +1,7 @@
 /*eslint-env node*/
 'use strict';
 
-var _ = require('underscore');
+var _ = require('lodash');
 var path = require('path');
 var merge = require('merge-stream');
 var gulp = require('gulp');
@@ -24,7 +24,8 @@ var config = {
 function getTranslationsObject(localePath, locale, defaultLocale) {
     var trans = require(localePath + `${locale}.json`);
     var defaultTrans = require(localePath + `${defaultLocale}.json`);
-    return _.extend(_.clone(defaultTrans), trans);
+    var merged = _.merge(_.clone(defaultTrans), trans);
+    return merged;
 }
 
 function getLocalizedTemplateStream(locale, defaultLocale, index) {
@@ -81,7 +82,6 @@ gulp.task('browserify', function () {
 });
 
 gulp.task('templates', function() {
-    var projectConfig = config.projects[config.currentProject];
     var defaultLocale = projectConfig.locales[0];
     var streams = merge();
 
