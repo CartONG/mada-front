@@ -7,7 +7,9 @@
     var regionsGeoJson;
     var regionsShapes;
 
-    var map, popupTpl, regionsListContainer, regionListItemTpl;
+    var map, popupTpl, modalTpl, regionsListContainer, regionListItemTpl;
+
+    var features = [];
 
     function renderMarkers(data) {
 
@@ -20,8 +22,9 @@
         var geoJsonLayer = L.geoJson(data, {
             onEachFeature: function (feature, layer) {
                 var popupData = feature.properties;
-                var popup = L.popup().setContent( popupTpl( {data: popupData }) );
-                layer.bindPopup(popup).openPopup();
+                var popup = L.popup().setContent( popupTpl( {data: popupData, internalIndex: features.length }) );
+                layer.bindPopup(popup);
+                features.push(feature);
             }
         });
         markerClusters.addLayer(geoJsonLayer);
@@ -61,7 +64,14 @@
         }
         updateCheckboxList('actionType');
         updateCheckboxList('population');
+    }
 
+    function openModal(link) {
+        var index = $(link).parents('.js-popup').data().index;
+        var data = features[index].properties;
+        var modalDom = modalTpl({data: data});
+
+        $(modalDom).modal();
     }
 
     function init() {
@@ -80,6 +90,7 @@
         // $.ajax('http://195.154.35.191:8000/geoactions/').done( renderMarkers );
 
         popupTpl = _.template( $('.js-tpl-popup').html() );
+        modalTpl = _.template( $('.js-tpl-modal').html() );
 
         regionsListContainer = $('.js-regions');
         regionListItemTpl = _.template('<li><a href="#" data-latlon="<%= center %>"><%= name %></a></li>');
@@ -126,8 +137,17 @@
 
             initRegionsListEvents();
         } );
+
+        $('#map').on('click', '.js-openContentModal', function(e) {
+            e.preventDefault();
+            openModal(e.target);
+        });
+
+
     }
 
     init();
+
+
 
 })();
