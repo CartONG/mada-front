@@ -1,4 +1,18 @@
 {
-    "test": "Malagasy aho !",
-    "navigation_map": "Carte !!"
+    "navigation_toggle": "activer/désactiver la navigation",
+    "navigation_map": "Carte",
+    "navigation_about": "À propos",
+    "navigation_signin": "Connexion",
+    "navigation_filter": "Filtrer",
+    "navigation_filters": "Filtres",
+    "navigation_close": "Fermer",
+    "search_button": "Rechercher",
+    "search_placeholder": "Recherche",
+    "provinces_title": "Zoomer sur une region (<em>faritra</em>)",
+    "action_status0": "à venir",
+    "action_status1": "en cours",
+    "action_status2": "terminée",
+    "action_NGO": "Organisme",
+    "action_places": "Lieux",
+    "action_description": "Description"
 }
