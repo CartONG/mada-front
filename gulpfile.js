@@ -16,10 +16,32 @@ var config = {
             locales: ['fr-FR']
         },
         atlas: {
-            locales: ['fr-FR', 'mg-MG']
+            locales: ['fr-FR', 'mg-MG'],
+            actionTypes: [
+                {
+                    'id': '0'
+                },
+                {
+                    'id': '1'
+                },
+                {
+                    'id': '2'
+                },
+                {
+                    'id': '3'
+                },
+                {
+                    'id': '4'
+                },
+                {
+                    'id': '5'
+                }
+            ]
         }
     }
 };
+
+var projectConfig = config.projects[config.currentProject];
 
 function getTranslationsObject(localePath, locale, defaultLocale) {
     var trans = require(localePath + `${locale}.json`);
@@ -31,7 +53,8 @@ function getTranslationsObject(localePath, locale, defaultLocale) {
 function getLocalizedTemplateStream(locale, defaultLocale, index) {
     var data = {
         project: config.currentProject,
-        trans: getTranslationsObject('./src/i18n/', locale, defaultLocale)
+        trans: getTranslationsObject('./src/i18n/', locale, defaultLocale),
+        projectConfig: projectConfig
     };
     data.trans.project = getTranslationsObject(`./src/i18n/${config.currentProject}/`, locale, defaultLocale);
 
