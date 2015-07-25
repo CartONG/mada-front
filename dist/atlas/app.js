@@ -24,22 +24,6 @@
         });
         markerClusters.addLayer(geoJsonLayer);
         map.addLayer(markerClusters);
-
-        // _.each(data.data, function (markerData) {
-
-        //     // lon,lat on test data :(
-        //     var rawCoordinates = markerData.coordinates.split(',');
-        //     var coordinates = [ parseFloat(rawCoordinates[1]), parseFloat(rawCoordinates[0]) ];
-
-        //     var marker = new L.Marker(coordinates);
-        //     markerClusters.addLayer(marker);
-
-        //     marker.data = markerData;
-        //     marker.on('click', onMarkerClick);
-
-        // });
-
-        // map.addLayer(markerClusters);
     }
 
     function onMarkerClick(e) {

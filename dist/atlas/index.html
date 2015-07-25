@@ -189,41 +189,29 @@
     
 <script type="text/template" class="js-tpl-popup">
     <div class="popup-title">
-        Titre de l'action
-        <% if (data.status === 'completed') { %>
+        <%= data.titre %>
+        <% if (data.avancement === 1) { %>
             <span class="label label-default">terminée</span>
-        <% } else if (data.status === 'pending') { %>
+        <% } else if (data.avancement === 2) { %>
             <span class="label label-warning">en cours</span>
+        <% } else if (data.avancement === 3) { %>
+            <span class="label label-warning">à venir</span>
         <% } %>
 
     </div>
     <table class="popup-table table table-striped">
         <tr>
-            <td>ONG</td>
-            <td><%= data.nom_ong %></td>
+            <td>Organisme</td>
+            <td><%= data.organisme %></td>
         </tr>
         <tr>
-            <td>Opérateur</td>
-            <td><%= data.operateur %></td>
+            <td>Lieux</td>
+            <td><%= data.localisation %></td>
         </tr>
         <tr>
-            <td>Catégorie</td>
-            <td><%= data.categorie %></td>
+            <td>Description</td>
+            <td><%= data.description %></td>
         </tr>
-        <tr>
-            <td>Public</td>
-            <td><%= data.public %></td>
-        </tr>
-        <!--
-        <tr>
-            <td>Début</td>
-            <td><%= data.debut %></td>
-        </tr>
-        <tr>
-            <td>Fin</td>
-            <td><%= data.fin %></td>
-        </tr>
-        -->
     </table>
     <div class="popup-link">
         <a class="underline" href="#" target="_blank">Détails</a>
