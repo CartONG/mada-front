@@ -1,3 +1,18 @@
 {
-    "test": "je suis en français"
+    "navigation_toggle": "activer/désactiver la navigation",
+    "navigation_map": "Carte",
+    "navigation_about": "À propos",
+    "navigation_signin": "Connexion",
+    "navigation_filter": "Filtrer",
+    "navigation_filters": "Filtres",
+    "navigation_close": "Fermer",
+    "search_button": "Rechercher",
+    "search_placeholder": "Recherche",
+    "provinces_title": "Zoomer sur une region (<em>faritra</em>)",
+    "popup_status0": "à venir",
+    "popup_status1": "en cours",
+    "popup_status2": "terminé",
+    "popup_NGO": "Organisme",
+    "popup_places": "Lieux",
+    "popup_description": "Description"
 }

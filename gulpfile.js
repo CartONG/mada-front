@@ -1,6 +1,7 @@
 /*eslint-env node*/
 'use strict';
 
+var _ = require('underscore');
 var path = require('path');
 var merge = require('merge-stream');
 var gulp = require('gulp');
@@ -20,12 +21,18 @@ var config = {
     }
 };
 
-function getLocalizedTemplateStream(locale, index) {
+function getTranslationsObject(localePath, locale, defaultLocale) {
+    var trans = require(localePath + `${locale}.json`);
+    var defaultTrans = require(localePath + `${defaultLocale}.json`);
+    return _.extend(_.clone(defaultTrans), trans);
+}
+
+function getLocalizedTemplateStream(locale, defaultLocale, index) {
     var data = {
         project: config.currentProject,
-        trans: require(`./src/i18n/${locale}.json`)
+        trans: getTranslationsObject('./src/i18n/', locale, defaultLocale)
     };
-    data.trans.project = require(`./src/i18n/${config.currentProject}/${locale}.json`);
+    data.trans.project = getTranslationsObject(`./src/i18n/${config.currentProject}/`, locale, defaultLocale);
 
     return gulp.src(`src/tpl/${config.currentProject}.tpl.html`)
         .pipe(plugins.fileInclude())
@@ -42,6 +49,8 @@ function getLocalizedTemplateStream(locale, index) {
         }))
         .pipe(gulp.dest(path.join('dist', config.currentProject)));
 }
+
+
 
 
 gulp.task('serve', ['build'], function() {
@@ -73,10 +82,11 @@ gulp.task('browserify', function () {
 
 gulp.task('templates', function() {
     var projectConfig = config.projects[config.currentProject];
+    var defaultLocale = projectConfig.locales[0];
     var streams = merge();
 
     projectConfig.locales.forEach(function(locale, index) {
-        streams.add(getLocalizedTemplateStream(locale, index));
+        streams.add(getLocalizedTemplateStream(locale, defaultLocale, index));
     });
 
     return streams;
