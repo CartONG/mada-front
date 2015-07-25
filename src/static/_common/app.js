@@ -17,26 +17,18 @@
             spiderfyDistanceMultiplier: 2
         });
 
-        _.each(data.data, function (markerData) {
-
-            // lon,lat on test data :(
-            var rawCoordinates = markerData.coordinates.split(',');
-            var coordinates = [ parseFloat(rawCoordinates[1]), parseFloat(rawCoordinates[0]) ];
-
-            var marker = new L.Marker(coordinates);
-            markerClusters.addLayer(marker);
-
-            marker.data = markerData;
-            marker.on('click', onMarkerClick);
-
+        var geoJsonLayer = L.geoJson(data, {
+            onEachFeature: function (feature, layer) {
+                layer.on('click', onMarkerClick);
+            }
         });
-
+        markerClusters.addLayer(geoJsonLayer);
         map.addLayer(markerClusters);
     }
 
     function onMarkerClick(e) {
         var marker = e.target;
-        var popupData = marker.data;
+        var popupData = marker.feature.properties;
 
         //wrap data in an object to avoid ref errors when rendering template
         var popup = L.popup().setContent( popupTpl( {data: popupData }) );
@@ -92,7 +84,8 @@
 
         L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png').addTo(map);
 
-        $.ajax('./testData.json').done( renderMarkers );
+        $.ajax('./testData2.json').done( renderMarkers );
+        // $.ajax('http://195.154.35.191:8000/geoactions/').done( renderMarkers );
 
         popupTpl = _.template( $('.js-tpl-popup').html() );
 
