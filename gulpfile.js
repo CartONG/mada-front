@@ -137,7 +137,6 @@ gulp.task('static_project', function() {
         .pipe(gulp.dest(path.join('dist', config.currentProject)));
 });
 
-
 gulp.task('static', ['static_common', 'static_project']);
 
 gulp.task('build', ['templates', 'static']);
