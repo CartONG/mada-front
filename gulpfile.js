@@ -9,11 +9,43 @@ var browserSync = require('browser-sync');
 var plugins = require('gulp-load-plugins')();
 
 var config = {
-    currentProject: 'atlas',
+    currentProject: 'onusida',
 
     projects: {
         onusida: {
-            locales: ['fr-FR']
+            locales: ['fr-FR'],
+            actionTypes: [
+                {
+                    'id': '1'
+                },
+                {
+                    'id': '2'
+                },
+                {
+                    'id': '3'
+                },
+                {
+                    'id': '4'
+                },
+                {
+                    'id': '5'
+                },
+                {
+                    'id': '6'
+                },
+                {
+                    'id': '7'
+                },
+                {
+                    'id': '8'
+                },
+                {
+                    'id': '9'
+                },
+                {
+                    'id': '10'
+                }
+            ]
         },
         atlas: {
             locales: ['fr-FR', 'mg-MG'],
@@ -69,6 +101,7 @@ function getLocalizedTemplateStream(locale, defaultLocale, index) {
         projectConfig: projectConfig
     };
     data.trans.project = getTranslationsObject(`./src/i18n/${config.currentProject}/`, locale, defaultLocale);
+    console.log(data.projectConfig)
 
     return gulp.src(`src/tpl/${config.currentProject}.tpl.html`)
         .pipe(plugins.fileInclude())

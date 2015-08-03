@@ -86,7 +86,11 @@
 
         L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png').addTo(map);
 
-        $.ajax('./testData2.json').done( renderMarkers );
+        // onusida
+        $.ajax('./testData.json').done( renderMarkers );
+
+        // atlas
+        // $.ajax('./testData2.json').done( renderMarkers );
         // $.ajax('http://195.154.35.191:8000/geoactions/').done( renderMarkers );
 
         popupTpl = _.template( $('.js-tpl-popup').html() );
