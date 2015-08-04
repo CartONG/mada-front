@@ -18,3 +18,4 @@ npm install -g gulp
 ```
 gulp
 ```
+- Ouvrir un navigateur sur http://localhost:3333 (configuration par défaut) 
